@@ -1,0 +1,31 @@
+{
+  "created": "2026-10-02",
+  "tool": "Built-in image_gen",
+  "purpose": "Original artwork for the Powwow creative home screen. Decorative examples, not user projects or generated workspace outputs.",
+  "reference": "User-provided Powwow Creative AI Studio Dashboard.png",
+  "assets": [
+    {
+      "file": "novel.webp",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 illustration for a small web carousel card. A beautiful antique open book, close-up from a slightly elevated angle, warm ivory pages curved naturally, a small golden light rising out of the center fold, fine floating ember dust. Dark charcoal background. Cinematic, realistic tactile paper and leather, amber rim light and a hint of dusty rose. Focal book centered, fully inside middle 80 percent of image. Premium imaginative creative studio mood, restrained and elegant. No readable words, text, logos, borders, UI, or watermarks."
+    },
+    {
+      "file": "film.webp",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 illustration for a small web carousel card. A lone astronaut seen from behind on an alien rocky ridge, a huge distant luminous mauve planet hanging low on the horizon, deep charcoal night sky and muted orange sunset. Premium cinematic sci-fi still, beautifully detailed, realistic materials, strong silhouette, painterly atmosphere, high contrast. Focal astronaut in left third, planet in right third, composed for cropping safely. No text, logos, borders, UI, or watermarks."
+    },
+    {
+      "file": "game.webp",
+      "prompt": "Use case: stylized-concept. Asset type: landscape 3:2 illustration for a small web carousel card. Epic original fantasy game concept art, a traveler with a dark cloak seen from behind overlooking a distant tall spired citadel in an immense rocky valley at sunset. Lavender mountains, glowing amber sky, deep charcoal foreground. Cinematic atmospheric depth and finely painted details, professional game key art, beautiful restrained orange and violet palette. Main subjects safely within middle 80 percent. No text, logos, borders, UI, or watermarks."
+    },
+    {
+      "file": "art.webp",
+      "prompt": "Use case: illustration-story. Asset type: landscape 3:2 illustration for a small web carousel card. A beautiful graphite character design drawing on warm gray artist paper, close-up three-quarter portrait of an original female fantasy explorer with loosely tied dark hair, delicate expressive eyes and a detailed jacket collar. Pencil crosshatching, confident fine linework, subtle blush lighting from right, traditional concept artist sketchbook aesthetic, professionally drawn anatomy. Head centered and fully visible within middle 80 percent. No text, logos, borders, UI, or watermarks."
+    },
+    {
+      "file": "nebula.webp",
+      "prompt": "Use case: stylized-concept. Asset type: wide 16:9 background texture for a creative web dashboard. Almost black deep space, extremely subtle dark rust red and dusty magenta nebula clouds clustered only along the far left and far right edges, tiny sparse pinprick amber stars. Center 70 percent of frame is very dark nearly empty charcoal black negative space for readable web content. Elegant low contrast volumetric dust, no bright large stars, no planets, no objects, no text or UI. Cinematic premium atmospheric background. Keep it predominantly black."
+    }
+  ],
+  "codeGraphics": [
+    "Orbit ring, waveform, 3D cube, and flame mark are native SVG/CSS."
+  ]
+}

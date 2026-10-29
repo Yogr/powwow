@@ -1,0 +1,109 @@
+.select-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 9px 11px;
+  color: var(--text, #f6f4f6);
+  background: var(--surface, #18191f);
+  border: 1px solid var(--border, #393940);
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: start;
+  cursor: pointer;
+}
+.select-menu-trigger > span:not(.select-menu-icon) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+.select-menu-trigger > svg {
+  flex-shrink: 0;
+  color: var(--muted, #a7a6b1);
+  transition: transform 140ms ease;
+}
+.select-menu-trigger[aria-expanded="true"] {
+  border-color: var(--accent, #ffa07b);
+}
+.select-menu-trigger[aria-expanded="true"] > svg {
+  transform: rotate(180deg);
+}
+.select-menu-trigger:hover:not(:disabled) {
+  background: var(--raised, #22232b);
+}
+.select-menu-trigger:focus-visible {
+  outline: 2px solid var(--accent, #ffa07b);
+  outline-offset: 3px;
+}
+.select-menu-list {
+  position: fixed;
+  z-index: 1200;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding: 5px;
+  color: var(--text, #f6f4f6);
+  background: #1d1d24;
+  border: 1px solid #51434a;
+  border-radius: 11px;
+  box-shadow: 0 14px 45px #0007;
+  font:
+    12px/1.5 "DM Sans",
+    sans-serif;
+  outline: none;
+}
+.select-menu-list:focus-visible {
+  border-color: var(--accent, #ffa07b);
+}
+.select-menu-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  min-width: 0;
+  user-select: none;
+}
+.select-menu-option > span:not(.select-menu-icon) {
+  flex: 1;
+  min-width: 0;
+}
+.select-menu-option strong {
+  display: block;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.select-menu-option small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted, #a7a6b1);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.select-menu-option > svg {
+  flex-shrink: 0;
+  color: var(--accent, #ffa07b);
+}
+.select-menu-option.is-active {
+  background: #3a2b28;
+}
+.select-menu-option[aria-selected="true"] {
+  color: #ffc4aa;
+}
+.select-menu-option[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.select-menu-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--accent, #ffa07b);
+}
+@media (prefers-reduced-motion: reduce) {
+  .select-menu-trigger > svg {
+    transition: none;
+  }
+}

@@ -1,0 +1,96 @@
+# Powwow's own local Supabase stack. Never shares containers or volumes with other projects.
+# CLI 2.119.0; https://supabase.com/docs/guides/local-development/cli/config
+project_id = "powwow"
+
+[api]
+enabled = true
+port = 56321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+auto_expose_new_tables = false
+
+[api.tls]
+enabled = false
+
+[db]
+port = 56322
+shadow_port = 56320
+major_version = 17
+health_timeout = "3m"
+
+[db.pooler]
+enabled = false
+port = 56329
+pool_mode = "session"
+default_pool_size = 20
+max_client_conn = 100
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+[db.seed]
+enabled = false
+sql_paths = []
+
+[realtime]
+enabled = false
+
+[studio]
+enabled = true
+port = 56323
+api_url = "http://127.0.0.1"
+
+[local_smtp]
+enabled = true
+port = 56324
+
+[storage]
+enabled = true
+file_size_limit = "100MiB"
+
+[storage.buckets.artifacts]
+public = false
+file_size_limit = "100MiB"
+allowed_mime_types = ["image/png", "image/jpeg", "image/webp", "video/mp4", "model/gltf-binary", "application/pdf", "text/plain"]
+
+[storage.s3_protocol]
+enabled = true
+
+[storage.analytics]
+enabled = false
+
+[storage.vector]
+enabled = false
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+external_url = "http://127.0.0.1:56321/auth/v1"
+jwt_issuer = "http://127.0.0.1:56321/auth/v1"
+additional_redirect_urls = ["http://localhost:5173", "http://127.0.0.1:5173", "io.powwow.app://login-callback/"]
+jwt_expiry = 3600
+signing_keys_path = "../.data/supabase-signing-keys.json"
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+enable_anonymous_sign_ins = false
+minimum_password_length = 10
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+secure_password_change = true
+max_frequency = "1s"
+otp_length = 6
+otp_expiry = 3600
+
+[edge_runtime]
+enabled = false
+inspector_port = 56328
+
+[analytics]
+enabled = false
+port = 56327

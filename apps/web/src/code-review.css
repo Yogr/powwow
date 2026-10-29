@@ -1,0 +1,97 @@
+.code-review { display: flex; flex-direction: column; gap: 14px; width: 100%; min-width: 0; padding: 26px 30px; color: var(--text); }
+.code-review-heading, .code-review-actions, .code-review-file-heading, .code-review-toolbar, .code-review-toolbar > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.code-review-heading h1 { font-size: 24px; letter-spacing: -.5px; }
+.code-review-heading p { color: var(--muted); font-size: 13px; margin-top: 5px; }
+.code-review-actions .button { min-height: 42px; padding: 9px 13px; font-size: 13px; }
+.code-review-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 8px; }
+.code-review-icon:hover { background: var(--raised); }
+.code-review-notice { font-size: 12px; color: var(--muted); min-height: 18px; }
+.code-review-error { color: #ffb5b5; border: 1px solid #6b4248; border-radius: 7px; padding: 10px 13px; font-size: 13px; }
+.code-review-empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; min-height: 330px; border: 1px dashed var(--border); border-radius: 10px; }
+.code-review-empty > svg { color: var(--accent); }
+.code-review-empty h2 { font-size: 17px; }
+.code-review-empty p { color: var(--muted); font-size: 14px; }
+.code-review-empty > span { color: var(--quiet); font-size: 12px; }
+.code-review-workspace { display: grid; grid-template-columns: 235px minmax(0, 1fr); min-height: 440px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.code-review-sidebar { min-width: 0; background: var(--sidebar); padding: 14px 10px; border-right: 1px solid var(--border); }
+.code-review-tree-heading { display: flex; align-items: center; justify-content: space-between; font-size: 12px; padding: 0 5px 12px; }
+.code-review-tree-heading strong { font-weight: 550; }
+.code-review-tree-heading strong span { color: var(--muted); margin-left: 6px; }
+.code-review-tree-heading > span { color: var(--muted); font-size: 11px; }
+.code-review-sidebar input { padding: 8px 10px; border-color: var(--border); font-size: 12px; margin-bottom: 12px; }
+.code-review-sidebar nav { max-height: 620px; overflow: auto; }
+.code-review-directory { min-width: 0; }
+.code-review-directory > summary { display: flex; align-items: center; gap: 6px; min-height: 34px; font-size: 12px; color: var(--muted); cursor: pointer; list-style: none; padding: 4px; }
+.code-review-directory > summary::-webkit-details-marker { display: none; }
+.code-review-directory > summary span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.code-review-directory[open] > summary > svg:first-child { transform: rotate(90deg); }
+.code-review-directory > div { padding-left: 12px; }
+.code-review-file { display: flex; align-items: center; gap: 7px; min-height: 36px; width: 100%; border-radius: 5px; padding: 7px 6px; text-align: left; font-size: 12px; }
+.code-review-file > span { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.code-review-file > svg { color: var(--muted); }
+.code-review-file small { color: var(--muted); font-size: 10px; }
+.code-review-file:hover { background: var(--surface); }
+.code-review-file.is-selected { background: var(--raised); color: var(--text); }
+.code-review-file.is-selected > svg { color: var(--accent); }
+.code-review-no-files { font-size: 12px; color: var(--muted); padding: 10px; }
+.code-review-main { min-width: 0; display: flex; flex-direction: column; background: var(--bg); }
+.code-review-file-heading { align-items: flex-start; padding: 14px 16px; border-bottom: 1px solid var(--border-soft); }
+.code-review-file-heading > div { min-width: 0; }
+.code-review-file-heading h2 { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 550; overflow-wrap: anywhere; }
+.code-review-file-heading p { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: 11px; margin-top: 7px; overflow-wrap: anywhere; }
+.code-review-status { text-transform: capitalize; }
+.code-review-added { color: #9ed9ac; }
+.code-review-removed { color: #f4aaaa; }
+.code-review-reviewed { flex-shrink: 0; display: flex; align-items: center; gap: 6px; font-size: 12px; min-height: 24px; cursor: pointer; }
+.code-review-reviewed input { width: 15px; height: 15px; accent-color: var(--accent); margin: 0; padding: 0; }
+.code-review-toolbar { border-bottom: 1px solid var(--border-soft); padding: 6px 10px; gap: 7px; flex-wrap: wrap; }
+.code-review-toolbar > div { gap: 4px; }
+.code-review-toolbar button { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 7px 9px; border-radius: 6px; font-size: 12px; color: var(--muted); }
+.code-review-toolbar button:hover, .code-review-toolbar button.is-active { background: var(--surface); color: var(--text); }
+.code-review-draft { color: var(--accent); padding: 0 5px; font-size: 11px; }
+.code-review-code { min-width: 0; overflow: auto; max-height: 650px; min-height: 330px; padding: 8px 0 16px; font: 12px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.code-review-hunk { min-width: fit-content; }
+.code-review-hunk-heading { background: #292c36; color: #b9bfd3; padding: 6px 13px; font-size: 11px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.code-review-line { display: grid; grid-template-columns: 42px 42px 20px minmax(0, 1fr); min-width: fit-content; }
+.code-review-line code { display: block; padding-right: 16px; white-space: pre; font: inherit; }
+.code-review-line.source { grid-template-columns: 48px minmax(0, 1fr); }
+.code-review-number { text-align: right; padding: 0 8px 0 2px; user-select: none; color: #9a9aa3; font-size: 11px; }
+.code-review-sign { user-select: none; text-align: center; }
+.code-review-line.add { background: #20382a; color: #c0e6c9; }
+.code-review-line.remove { background: #40262c; color: #f3c1c7; }
+.code-review-line.add .code-review-number { color: #a4c4ac; }
+.code-review-line.remove .code-review-number { color: #cca5ad; }
+.code-review-line.note { color: var(--muted); font-style: italic; }
+.code-review-code.is-wrapped .code-review-hunk, .code-review-code.is-wrapped .code-review-line { min-width: 0; }
+.code-review-code.is-wrapped .code-review-line code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.code-review-meta { padding: 20px; font: 13px/1.6 var(--font-family, inherit); color: var(--muted); }
+.code-review-editor { display: flex; flex: 1; flex-direction: column; padding: 12px; gap: 9px; }
+.code-review-editor > label { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.code-review-editor textarea { flex: 1; min-height: 360px; font: 12px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; tab-size: 2; border-color: var(--border); resize: vertical; }
+.code-review-editor > div { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.code-review-editor > div > span { color: var(--muted); font-size: 11px; }
+.code-review-editor .button { font-size: 12px; min-height: 38px; }
+@media (max-width: 850px) {
+  .code-review { padding: 18px; }
+  .code-review-workspace { grid-template-columns: 190px minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .code-review { padding: 15px 12px; gap: 12px; }
+  .code-review-heading { align-items: flex-start; flex-direction: column; gap: 15px; }
+  .code-review-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+  .code-review-actions .button { min-height: 44px; }
+  .code-review-workspace { grid-template-columns: minmax(0, 1fr); }
+  .code-review-sidebar { border-right: 0; border-bottom: 1px solid var(--border); padding: 12px; }
+  .code-review-sidebar nav { max-height: 180px; }
+  .code-review-file, .code-review-directory > summary { min-height: 40px; }
+  .code-review-file-heading { padding: 12px; gap: 8px; }
+  .code-review-reviewed { min-height: 32px; }
+  .code-review-toolbar { padding: 5px 6px; }
+  .code-review-toolbar button { min-height: 42px; }
+  .code-review-line { grid-template-columns: 32px 32px 16px minmax(0, 1fr); }
+  .code-review-number { padding-right: 5px; font-size: 10px; }
+  .code-review-line.source { grid-template-columns: 36px minmax(0, 1fr); }
+  .code-review-line code { padding-right: 9px; }
+  .code-review-editor > div { align-items: flex-start; flex-direction: column; }
+  .code-review-empty { min-height: 290px; text-align: center; padding: 20px; }
+}

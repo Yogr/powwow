@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#111216"/>
+  <defs><linearGradient id="ember" x1="30" y1="10" x2="44" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#ff9957"/><stop offset=".43" stop-color="#ff7954"/><stop offset=".74" stop-color="#ff615e"/><stop offset="1" stop-color="#f04477"/></linearGradient></defs>
+  <g transform="translate(91 63) scale(4.8)" fill="url(#ember)"><path d="M35 9C25 20 35 29 43 36C52 46 52 54 49 64C62 45 56 31 44 22C39 18 36 13 35 9Z"/><path d="M24 25C20 40 33 41 41 49C46 54 47 59 47 64C50 49 40 40 32 34C28 31 25 28 24 25Z"/><path d="M15 40C18 54 27 57 45 63C42 54 36 50 28 47C22 45 18 43 15 40Z"/></g>
+</svg>

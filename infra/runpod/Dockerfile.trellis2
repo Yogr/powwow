@@ -1,0 +1,31 @@
+FROM pytorch/pytorch:2.6.0-cuda12.4-cudnn9-devel@sha256:0cf3402e946b7c384ba943ee05c90b4c5a4a05227923921f2b0918c011cfaf56
+ENV DEBIAN_FRONTEND=noninteractive PYTHONUNBUFFERED=1 HF_HOME=/runpod-volume/huggingface \
+    POWWOW_WORKER_PROFILE=trellis2 POWWOW_TRELLIS_ROOT=/opt/TRELLIS.2 \
+    PYTHONPATH=/opt/TRELLIS.2 MAX_JOBS=4 TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9;9.0" BLENDER_BINARY=blender
+RUN apt-get update && apt-get install -y --no-install-recommends git ffmpeg blender libgl1 libglib2.0-0 libjpeg-dev build-essential && rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/microsoft/TRELLIS.2.git /opt/TRELLIS.2 && \
+    cd /opt/TRELLIS.2 && git checkout 75fbf0183001ed9876c8dbb35de6b68552ee08bd
+RUN pip install --no-cache-dir packaging ninja wheel setuptools && \
+    pip install --no-cache-dir flash-attn==2.7.3 --no-build-isolation
+RUN pip install --no-cache-dir imageio==2.37.0 imageio-ffmpeg==0.6.0 tqdm==4.67.1 easydict==1.13 \
+    opencv-python-headless==4.11.0.86 trimesh==4.6.6 transformers==4.57.6 \
+    tensorboard==2.19.0 pandas==2.2.3 lpips==0.1.4 zstandard==0.23.0 Pillow==11.2.1 \
+    kornia==0.8.0 timm==1.0.15 numpy==1.26.4 scipy==1.15.2 \
+    runpod==1.12.0 httpx==0.28.1 fastapi==0.142.2 uvicorn==0.54.0
+RUN pip install --no-cache-dir git+https://github.com/EasternJournalist/utils3d.git@9a4eb15e4021b67b12c460c7057d642626897ec8
+RUN git clone --recursive https://github.com/JeffreyXiang/CuMesh.git /opt/CuMesh && \
+    cd /opt/CuMesh && git checkout 12289e1062f0603f2f0d0771b02e1395d247f26f && git submodule update --init --recursive && \
+    pip install . --no-build-isolation
+RUN git clone --recursive https://github.com/JeffreyXiang/FlexGEMM.git /opt/FlexGEMM && \
+    cd /opt/FlexGEMM && git checkout 6dd94a859c26ee8246888502eada3dd8ad85532e && git submodule update --init --recursive && \
+    pip install . --no-build-isolation
+RUN git clone --branch v0.4.0 https://github.com/NVlabs/nvdiffrast.git /opt/nvdiffrast && \
+    pip install /opt/nvdiffrast --no-build-isolation
+RUN git clone https://github.com/JeffreyXiang/nvdiffrec.git /opt/nvdiffrec && \
+    cd /opt/nvdiffrec && git checkout b296927cc7fd01c2ac1087c8065c4d7248f72da4 && \
+    pip install . --no-build-isolation
+RUN pip install /opt/TRELLIS.2/o-voxel --no-build-isolation
+WORKDIR /app
+COPY services/gpu_worker /app
+COPY services/blender/validate.py /app/blender_validate.py
+CMD ["python", "-u", "runpod_handler.py"]

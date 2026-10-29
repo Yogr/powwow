@@ -1,0 +1,7 @@
+{
+  "input": {
+    "capability": "text_to_image",
+    "prompt": "A small terracotta vase holding three white daisies on an oak table, warm window light, clean editorial photograph",
+    "settings": {"width": 512, "height": 512, "steps": 4, "seed": 7}
+  }
+}

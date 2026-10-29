@@ -1,0 +1,68 @@
+{
+  "version": "request-planner-2026-10-09-production",
+  "qualification": "candidate",
+  "scope": "Live request interpretation only. Does not evaluate generated image or mesh quality, execute media, or certify the complete 3D production pipeline.",
+  "max_cases": 6,
+  "budget_per_case_usd": 0.4,
+  "maximum_total_budget_usd": 2.4,
+  "promotion_gate": "Every immediate-deliverable, workflow, source, and filename check must pass across three fresh sessions, followed by product-owner review. Inspect complete execution briefs for preserved constraints and unsupported promises. Record model, effort, token usage, cost and latency. These first-run automated judgments alone do not qualify a model or establish that it is the cheapest acceptable candidate.",
+  "cases": [
+    {
+      "id": "timesoldier-exact-regression",
+      "attach_fixture": true,
+      "prompt": "I want to modify this time soldier image to be better prepared to feed into an image to 3D model generator. We must remove the gun, and put into a T-Pose. More of the soldier armor should be similarly colored so it can easily be modified with different color skins to designate player colors, i.e. player 1 would be red, player 2 blue, player 3 green, player 4 orange, etc. So a lot of the armor must be colorized in the same color to be able to make the player stand out . Please make those changes and name the new image 'TimeSoldier.png'.",
+      "expect": {
+        "action": "media",
+        "workflow": "image.edit.v1",
+        "output_name": "TimeSoldier.png",
+        "source": "fixture",
+        "brief_concepts": [["remove the gun", "remove gun", "without a gun", "no gun", "remove the weapon", "unarmed"], ["t-pose", "t pose"], ["red"], ["blue"], ["green"], ["orange"], ["armor", "armour"], ["player"]]
+      }
+    },
+    {
+      "id": "explicit-concept-glb",
+      "attach_fixture": true,
+      "prompt": "Use the attached prepared reference image to create one 3D concept mesh with the available TRELLIS workflow now. Keep its raw intermediate and validated result. Save the final model as TimeSoldier.glb. I am asking for a concept mesh, with no new image, AI finishing or new texture work.",
+      "expect": {"action": "media", "workflow": "asset.image_to_3d.v1", "output_name": "TimeSoldier.glb", "source": "fixture"}
+    },
+    {
+      "id": "discuss-3d-without-generation",
+      "attach_fixture": true,
+      "prompt": "Explain what makes a character reference suitable for an image-to-3D modeller and what TRELLIS and Blender each do. Do not generate an image, model, or any other file; I am only asking for an explanation.",
+      "expect": {"action": "chat", "source": "none"}
+    },
+    {
+      "id": "full-production-pipeline",
+      "attach_fixture": true,
+      "prompt": "Run the full finished 3D production workflow on this image: first optimize the reference image, then create the detailed TRELLIS master, have a GPT-6 model visually inspect and finish it in Blender, then bake final albedo textures into its UV maps and inspect the exported GLB. Preserve the reference's design and colors. Save it as FinishedSoldier.glb.",
+      "expect": {
+        "action": "media",
+        "workflow": "asset.production.v1",
+        "source": "fixture",
+        "output_name": "FinishedSoldier.glb"
+      }
+    },
+    {
+      "id": "complex-project-details-update",
+      "attach_fixture": false,
+      "component": "details",
+      "prompt": "Update our existing Project Details, keeping their user-created categories: Mara remains the flight surgeon and still refuses to carry a weapon, but add that she repairs damaged time suits and is trying to rescue her brother. In the existing Vehicles category, add a blue scout skiff called Kestrel with two seats and no weapons. Preserve our confirmed Mars setting and do not replace the Blueprint, create a second Mara, start a new project, generate artwork, or mark any tasks complete. Keep names and descriptions together in the appropriate entries.",
+      "expect": {"action": "update", "source": "none", "needs_response": true}
+    },
+    {
+      "id": "future-video-use-still-image",
+      "attach_fixture": false,
+      "prompt": "Create a new still image of a brass clockwork fox on a plain white background, full body in side profile, with no text or border. It will later be used as the starting frame for an animated video, but today I only want the PNG. Name it ClockworkFox.png.",
+      "expect": {
+        "action": "media", "workflow": "image.create.v1", "output_name": "ClockworkFox.png", "source": "none",
+        "brief_concepts": [["brass"], ["clockwork"], ["fox"], ["white"], ["side profile", "side view"], ["no text", "without text"], ["no border", "without a border", "without borders", "borderless", "no text or border"]]
+      }
+    }
+  ],
+  "human_review": [
+    "The exact TimeSoldier request produces an image-edit plan, keeps every supplied change and filename, and never schedules 3D generation merely because that is the image's future purpose.",
+    "The explanation case does not schedule paid media. The full-pipeline case selects the executable production workflow and preserves the requested stages without promising arbitrary topology repair, rigging or new surface artwork.",
+    "The project-update case remains in its existing project and understands its current components, categories, and record identities. This classifier-only test does not validate downstream record writes.",
+    "Inspect planner latency and all constraint-preservation judgments before owner approval. A correct schema or a single successful suite does not establish general planning quality or the cheapest acceptable model."
+  ]
+}

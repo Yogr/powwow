@@ -1,0 +1,16 @@
+{
+  "name": "powwow",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A shared creative workspace and model orchestration platform",
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "db": "node scripts/postgres.mjs"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "2.41.0",
+    "@playwright/test": "1.63.0",
+    "embedded-postgres": "18.4.0-beta.17"
+  }
+}

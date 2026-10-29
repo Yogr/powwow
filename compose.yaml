@@ -1,0 +1,29 @@
+name: powwow
+# Deployment uses hosted Supabase. Local development: scripts/start-local.ps1.
+# Loopback URLs inside containers address the containers, not the host.
+services:
+  api:
+    build: ./apps/api
+    env_file: ${POWWOW_COMPOSE_ENV_FILE:-.env.cloud}
+    environment:
+      APP_ENV: production
+      LOCAL_AUTH: "false"
+      STORAGE_BACKEND: supabase
+    ports: ["127.0.0.1:8000:8000"]
+    restart: unless-stopped
+  worker:
+    build: ./apps/api
+    command: ["python", "-m", "powwow.worker"]
+    env_file: ${POWWOW_COMPOSE_ENV_FILE:-.env.cloud}
+    environment:
+      APP_ENV: production
+      LOCAL_AUTH: "false"
+      STORAGE_BACKEND: supabase
+    restart: unless-stopped
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: ../../infra/web.Dockerfile
+    ports: ["127.0.0.1:5173:80"]
+    depends_on: [api]
+    restart: unless-stopped

@@ -1,0 +1,7 @@
+FROM pytorch/pytorch:2.8.0-cuda12.8-cudnn9-runtime@sha256:417bd75df6365104c283ea4c1651fb3530d9eb5a4c2fafa51943cff2a94e6385
+ENV PYTHONUNBUFFERED=1 HF_HOME=/runpod-volume/huggingface POWWOW_WORKER_PROFILE=image POWWOW_CPU_OFFLOAD=1
+WORKDIR /app
+COPY services/gpu_worker/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY services/gpu_worker /app
+CMD ["python", "-u", "runpod_handler.py"]

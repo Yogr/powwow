@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-30",
+  "note": "Candidate deployment inventory, not an enabled production catalog. Runtime image digests and measured profiles must be recorded after actual builds and GPU tests.",
+  "models": [
+    {
+      "id": "qwen3-4b-instruct-2507",
+      "capability": "chat",
+      "repository": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "license": "Apache-2.0",
+      "runtime": "infra/runpod/Dockerfile.chat",
+      "runtime_digest": null,
+      "recommended_first_gpu_gb": 24,
+      "inference_settings": {"max_input_tokens": 8192, "max_output_tokens": 2048, "temperature": 0.65, "concurrency": 1},
+      "measured_cloud_profile": null,
+      "cloud_validated": false
+    },
+    {
+      "id": "flux2-klein-4b",
+      "capability": "text_to_image",
+      "repository": "black-forest-labs/FLUX.2-klein-4B",
+      "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+      "license": "Apache-2.0",
+      "license_url": "https://huggingface.co/black-forest-labs/FLUX.2-klein-4B/blob/e7b7dc27f91deacad38e78976d1f2b499d76a294/LICENSE.md",
+      "runtime": "infra/runpod/Dockerfile.image",
+      "runtime_digest": null,
+      "recommended_first_gpu_gb": 24,
+      "upstream_minimum_vram_gb_approximate": 13,
+      "inference_settings": {"steps": 4, "guidance_scale": 1.0, "cpu_offload": true, "concurrency": 1},
+      "measured_cloud_profile": null,
+      "cloud_validated": false
+    },
+    {
+      "id": "wan22-ti2v-5b",
+      "capability": "image_to_video",
+      "repository": "Wan-AI/Wan2.2-TI2V-5B",
+      "revision": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+      "license": "Apache-2.0",
+      "runtime_repository": "https://github.com/Wan-Video/Wan2.2",
+      "runtime_revision": "1ea34ff48f87168174e12956e200b1d908b1c5ff",
+      "runtime": "infra/runpod/Dockerfile.video",
+      "runtime_digest": null,
+      "recommended_first_gpu_gb": 48,
+      "upstream_offloaded_vram_gb": 24,
+      "inference_settings": {"frames": 121, "steps": 50, "fps": 24, "area": "1280*704", "cpu_offload": true, "t5_cpu": true, "concurrency": 1},
+      "measured_cloud_profile": null,
+      "cloud_validated": false
+    },
+    {
+      "id": "trellis2-4b",
+      "capability": "image_to_3d",
+      "repository": "microsoft/TRELLIS.2-4B",
+      "revision": "af44b45f2e35a493886929c6d786e563ec68364d",
+      "license": "MIT for main model/code; separate component terms below",
+      "runtime_repository": "https://github.com/microsoft/TRELLIS.2",
+      "runtime_revision": "75fbf0183001ed9876c8dbb35de6b68552ee08bd",
+      "runtime": "infra/runpod/Dockerfile.trellis2",
+      "runtime_digest": null,
+      "recommended_first_gpu": "A100 80 GB",
+      "upstream_minimum_vram_gb": 24,
+      "inference_settings": {"pipeline_type": "1024_cascade", "decimation_target": 100000, "texture_size": 2048, "concurrency": 1},
+      "components": [
+        {"repository": "facebook/dinov3-vitl16-pretrain-lvd1689m", "revision": "ea8dc2863c51be0a264bab82070e3e8836b02d51", "license": "DINOv3 custom license; gated access and acceptance required"},
+        {"repository": "microsoft/TRELLIS-image-large", "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96", "license": "MIT", "files": "ckpts/ss_dec_conv3d_16l8_fp16*"},
+        {"repository": "https://github.com/JeffreyXiang/CuMesh", "revision": "12289e1062f0603f2f0d0771b02e1395d247f26f", "license_review": "Required including pinned submodules"},
+        {"repository": "https://github.com/JeffreyXiang/FlexGEMM", "revision": "6dd94a859c26ee8246888502eada3dd8ad85532e", "license_review": "Required including pinned submodules"},
+        {"repository": "https://github.com/NVlabs/nvdiffrast", "version": "v0.4.0", "license_review": "Required for NVIDIA source code license"},
+        {"repository": "https://github.com/JeffreyXiang/nvdiffrec", "revision": "b296927cc7fd01c2ac1087c8065c4d7248f72da4", "license_review": "Required for renderutils and dependencies"}
+      ],
+      "excluded_component": {"repository": "briaai/RMBG-2.0", "reason": "Default upstream background-removal dependency has separate commercial terms. Runner uses prepared input and does not instantiate or download BRIA."},
+      "measured_cloud_profile": null,
+      "cloud_validated": false,
+      "commercial_component_review_complete": false
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "kind": "Approved Powwow wordmarks",
+  "sources": [
+    {
+      "variant": "monochrome",
+      "file": ".data/brand-approved/originals/powwow-monochrome-reference.png"
+    },
+    {
+      "variant": "color",
+      "file": ".data/brand-approved/originals/powwow-color-reference.png"
+    }
+  ],
+  "files": {
+    "color": "powwow-logo-color.svg",
+    "monochrome": "powwow-logo-monochrome.svg",
+    "color_png": "powwow-logo-color.png",
+    "monochrome_png": "powwow-logo-monochrome.png"
+  },
+  "method": "Approved silhouette traced from the supplied monochrome reference and fitted to editable cubic SVG paths. Color gradients and ribbon-fold shading rebuilt as SVG fills to match the supplied references. The background and Concept 1 caption are excluded. PNG exports are rendered from the final SVGs.",
+  "viewBox": [
+    209,
+    414,
+    1055,
+    188
+  ],
+  "png_dimensions": [
+    3165,
+    564
+  ],
+  "application": {
+    "sidebar": "monochrome",
+    "sign_in": "monochrome",
+    "symbol": "powwow-flame-restored.png",
+    "tagline": "Let's build together.",
+    "sidebar_dimensions": {
+      "symbol": [
+        32,
+        42
+      ],
+      "wordmark_width": 150,
+      "gap": 8
+    }
+  },
+  "exploration": {
+    "tool": "Built-in image_gen",
+    "adopted": false,
+    "reason": "Transparent-image exports retained visible edge and counter artifacts. Final production assets use native SVG paths.",
+    "prompts": [
+      {
+        "variant": "color",
+        "stage": "initial_cleanup",
+        "prompt": "Use case: background-extraction.\nThis is a cleanup of an approved logo, not a redesign. Preserve the supplied Powwow wordmark's exact silhouette, capital P, circular o letters, final w, proportions, spacing, and the distinctive continuous folded ribbon that forms the two middle w letters. Keep its existing fold shading and visual depth. Remove the entire dark backdrop, all glow outside the letter edges, and the small \"Concept 1\" caption. Clean away mottled surface texture and antialias the edges smoothly. The result must be just the logo letters, with genuinely transparent alpha everywhere outside them and inside their counters, including the P and o holes. No new icon, tagline, text, shadows, outlines, scenery, or added shapes. Do not replace it with a different font. Keep the mark horizontal and approximately 5.9:1 in width-to-height, at high resolution. Use a wide canvas cropped close to the logo with only a small even transparent margin.\nInput image: edit target, approved color logo.\nPreserve the warm yellow-orange through coral, red and pink gradients exactly as in this color reference, including the orange highlight on the right ribbon fold."
+      },
+      {
+        "variant": "color",
+        "stage": "edge_cleanup",
+        "prompt": "Clean this exact approved Powwow logo for production. The attached image is the edit target. Correct ONLY the edge and alpha defects: remove every speck, fringe, dirty pixel, colored halo, outline and bevel outside the solid letter silhouettes, and empty the P and both o counters completely. All letter interiors must be solid opaque smoothly shaded color; all space outside the logo and inside the holes must be perfectly clear alpha, without any fragments or haze. Smooth continuous crisp vector-like boundaries. Preserve the exact letter shapes, proportions, capital P, spacing, flowing double-w ribbon and restrained fold shading. Preserve the exact orange, coral, hot pink gradients shown. No yellow fragments outside the P. No caption, texture, background, drop shadow, glow or redesign. Tightly frame the complete horizontal wordmark with 2% transparent padding, maintaining its original approximately 5.9:1 aspect ratio."
+      },
+      {
+        "variant": "color",
+        "stage": "flat_background",
+        "prompt": "Faithfully restore this approved logo as pristine, crisp logo artwork. Input is the approved design and edit target. Keep its exact capital P, circular o's, the two connected ribbon w's in the middle, final w, and exact spacing and proportions. Orange/coral/pink colors and the existing ribbon-fold color shading. Remove all texture, lighting effects and the words \"Concept 1\". Smooth perfectly clean silhouettes and continuous edge curves, like a polished vector graphic. For this intermediate export, put the wordmark on one perfectly uniform solid chroma-key GREEN background, hex #00FF00. Fill the letter holes and every space around the lettering with that exact same solid green. No green reflections, glow, outline, gradients or specks in the background. Preserve the original approved lettering and color design; no added 3D/bevel edge or new font. Large centered horizontal wordmark, approximately 5.9:1 width to height, complete and uncropped, with small margins."
+      },
+      {
+        "variant": "color",
+        "stage": "extraction",
+        "prompt": "Use case: background-extraction. Remove only the solid green chroma-key background from this logo, including all green inside the letter counters. Make every green pixel fully transparent and clean the green fringe from the antialiased edges. Keep the complete Powwow logo's existing letter shapes, opaque letter colors, gradient and fold shading pixel-faithful. Do not redraw, alter, add or remove any part of the lettering. Return the isolated logo as transparent RGBA, trimmed closely to the visible wordmark with a small even transparent margin. No background of any color, no glow, no specks, no shadows, no extra text."
+      },
+      {
+        "variant": "mono",
+        "stage": "initial_cleanup",
+        "prompt": "Use case: background-extraction.\nThis is a cleanup of an approved logo, not a redesign. Preserve the supplied Powwow wordmark's exact silhouette, capital P, circular o letters, final w, proportions, spacing, and the distinctive continuous folded ribbon that forms the two middle w letters. Keep its existing fold shading and visual depth. Remove the entire dark backdrop, all glow outside the letter edges, and the small \"Concept 1\" caption. Clean away mottled surface texture and antialias the edges smoothly. The result must be just the logo letters, with genuinely transparent alpha everywhere outside them and inside their counters, including the P and o holes. No new icon, tagline, text, shadows, outlines, scenery, or added shapes. Do not replace it with a different font. Keep the mark horizontal and approximately 5.9:1 in width-to-height, at high resolution. Use a wide canvas cropped close to the logo with only a small even transparent margin.\nInput image: edit target, approved mono logo.\nPreserve the white and very light silver lettering with restrained soft gray shading on the overlapping ribbon folds. No colors."
+      },
+      {
+        "variant": "mono",
+        "stage": "edge_cleanup",
+        "prompt": "Clean this exact approved Powwow logo for production. The attached image is the edit target. Correct ONLY the edge and alpha defects: remove every speck, fringe, dirty pixel, colored halo, outline and bevel outside the solid letter silhouettes, and empty the P and both o counters completely. All letter interiors must be solid opaque smoothly shaded color; all space outside the logo and inside the holes must be perfectly clear alpha, without any fragments or haze. Smooth continuous crisp vector-like boundaries. Preserve the exact letter shapes, proportions, capital P, spacing, flowing double-w ribbon and restrained fold shading. White and light silver with soft gray fold shading only. Remove the thin gray outline and all white flecks outside the letters. No caption, texture, background, drop shadow, glow or redesign. Tightly frame the complete horizontal wordmark with 2% transparent padding, maintaining its original approximately 5.9:1 aspect ratio."
+      },
+      {
+        "variant": "mono",
+        "stage": "flat_background",
+        "prompt": "Faithfully restore this approved logo as pristine, crisp logo artwork. Input is the approved design and edit target. Keep its exact capital P, circular o's, the two connected ribbon w's in the middle, final w, and exact spacing and proportions. White/light silver with the existing soft gray ribbon-fold shading. Remove all texture, lighting effects and the words \"Concept 1\". Smooth perfectly clean silhouettes and continuous edge curves, like a polished vector graphic. For this intermediate export, put the wordmark on one perfectly uniform solid chroma-key GREEN background, hex #00FF00. Fill the letter holes and every space around the lettering with that exact same solid green. No green reflections, glow, outline, gradients or specks in the background. Preserve the original approved lettering and color design; no added 3D/bevel edge or new font. Large centered horizontal wordmark, approximately 5.9:1 width to height, complete and uncropped, with small margins."
+      },
+      {
+        "variant": "mono",
+        "stage": "extraction",
+        "prompt": "Use case: background-extraction. Remove only the solid green chroma-key background from this logo, including all green inside the letter counters. Make every green pixel fully transparent and clean the green fringe from the antialiased edges. Keep the complete Powwow logo's existing letter shapes, opaque letter colors, gradient and fold shading pixel-faithful. Do not redraw, alter, add or remove any part of the lettering. Return the isolated logo as transparent RGBA, trimmed closely to the visible wordmark with a small even transparent margin. No background of any color, no glow, no specks, no shadows, no extra text."
+      }
+    ]
+  }
+}

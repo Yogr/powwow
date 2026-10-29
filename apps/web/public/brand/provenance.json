@@ -1,0 +1,32 @@
+{
+  "flame": {
+    "original": "powwow-flame-original.png",
+    "restored": "powwow-flame-restored.png",
+    "dimensions": [
+      1103,
+      1426
+    ],
+    "method": "Built-in image_gen editing, using the user's original logo as reference, followed by a color correction pass.",
+    "prompt": "Faithfully restore the supplied three-ribbon flame logo at high resolution. Preserve the silhouette, proportions, negative spaces and warm orange, coral and dusty pink colors. Remove the dark background to true transparency. Smooth the edges. No redesign, glow, shadows, outlines or added elements. Avoid neon magenta."
+  },
+  "wordmark": {
+    "file": "powwow-logo-monochrome.svg",
+    "monochrome": "powwow-logo-monochrome.svg",
+    "details": "approved-logos.json",
+    "method": "Native SVG restoration of the user-approved references. See approved-logos.json for source files and export details.",
+    "color": "powwow-logo-color.svg"
+  },
+  "previous_wordmark": {
+    "file": "powwow-wordmark.svg",
+    "method": "Leckerli One outlines with custom optical spacing, a 55-unit overlap between the two middle w letters, a redrawn extended exit stroke on the first w, and a transparent 30-unit clearance carved into the second w. The SVG contains paths only and requires no font download.",
+    "base_typeface": "Leckerli One by Gesine Todt",
+    "source": "https://github.com/google/fonts/tree/main/ofl/leckerlione",
+    "license": "LeckerliOne-OFL.txt",
+    "viewBox": [
+      -60,
+      -520,
+      3991,
+      815
+    ]
+  }
+}

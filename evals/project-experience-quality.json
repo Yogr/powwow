@@ -1,0 +1,135 @@
+{
+  "version": "2026-10-09",
+  "qualification": "candidate",
+  "promotion": "All routing cases correct across three fresh sessions, zero unsupported mutations or tier downgrades, and product-owner review. Record median/p95 classifier latency, usage and complete policy; set and approve a product latency target before promotion.",
+  "cases": [
+    {
+      "id": "spanish",
+      "prompt": "I want to learn spanish",
+      "action": "setup",
+      "kind": "language",
+      "target_language": "es",
+      "title_criteria": "Concise Spanish-learning title, e.g. Learning Spanish; no request wording."
+    },
+    {
+      "id": "named-game",
+      "prompt": "I want to build a game called Apollo Lost",
+      "action": "setup",
+      "kind": "game",
+      "title_criteria": "Apollo Lost Game; preserve the supplied name and identify the game type."
+    },
+    {
+      "id": "paraphrase",
+      "prompt": "Could you be my Japanese conversation tutor? I'm starting from zero.",
+      "action": "setup",
+      "kind": "language",
+      "target_language": "ja"
+    },
+    {
+      "id": "first-novel",
+      "prompt": "I want to write my first novel",
+      "action": "setup",
+      "kind": "book"
+    },
+    {
+      "id": "rich-novel",
+      "prompt": "I want to write my first novel called Apollo Lost. Mara is the flight surgeon on an Apollo rescue mission. She is patient under pressure. The theme is loyalty versus duty. Keep all historical facts grounded in primary NASA sources; don't invent historical evidence.",
+      "action": "setup",
+      "kind": "book",
+      "records": [
+        "characters",
+        "memory"
+      ]
+    },
+    {
+      "id": "language-app",
+      "prompt": "Build an app that helps people learn Spanish",
+      "action": "setup",
+      "kind": "app"
+    },
+    {
+      "id": "negation",
+      "prompt": "I don't want to start a novel. Explain how novelists organize their notes.",
+      "action": "chat"
+    },
+    {
+      "id": "explanation",
+      "prompt": "How do Spanish language tutors usually teach beginners?",
+      "action": "chat"
+    },
+    {
+      "id": "unclear-language",
+      "prompt": "Help me learn a language",
+      "action": "setup",
+      "kind": "language",
+      "target_language": null
+    },
+    {
+      "id": "game",
+      "prompt": "Let's build a small puzzle game",
+      "action": "setup",
+      "kind": "game"
+    },
+    {
+      "id": "movie",
+      "prompt": "I want to make a short film about two estranged sisters",
+      "action": "setup",
+      "kind": "movie"
+    },
+    {
+      "id": "comic",
+      "prompt": "Help me create a comic about a lost robot",
+      "action": "setup",
+      "kind": "comic"
+    },
+    {
+      "id": "website",
+      "prompt": "I want to build a website for my pottery studio",
+      "action": "setup",
+      "kind": "website"
+    },
+    {
+      "id": "podcast",
+      "prompt": "I want to start a podcast",
+      "action": "setup",
+      "kind": "podcast"
+    },
+    {
+      "id": "music",
+      "prompt": "Help me write a song",
+      "action": "setup",
+      "kind": "music"
+    },
+    {
+      "id": "course",
+      "prompt": "Create a beginner course about astronomy",
+      "action": "setup",
+      "kind": "course"
+    },
+    {
+      "id": "brand",
+      "prompt": "Help me build a brand for my bakery",
+      "action": "setup",
+      "kind": "brand"
+    },
+    {
+      "id": "research",
+      "prompt": "Start a research project about urban heat islands",
+      "action": "setup",
+      "kind": "research"
+    }
+  ],
+  "human_review": [
+    "Component sessions: test at least three turns in Project Details, Task Board and Blueprint, then return to each. Pronouns and follow-ups must use only that component’s conversation, while shared saved facts remain consistent. Explicit cross-component requests may use saved project data; do not invent conversation history.",
+    "Entry images: after confirmation test both custom prompts and Use entry details, short and long descriptions, and character/prop/location subjects. Inspect subject adherence and text fidelity; record route, model, cost and latency. Upload and asset choice must stay within the project. Fixtures are not visual quality evidence; obtain owner review before promotion.",
+    "Project Details v2: descriptions retain all existing and newly supplied facts, references remain intact, custom categories are preferred where appropriate, and generic editors are never presented as separate tools. Test follow-ups, category renaming, manual edits and old paid reply recovery.",
+    "Long book and game briefs using $text_ref/$text_parts context packing retain every supplied detail. Compare interpretation with unpacked input that fits; references must not be treated as literal story text or persisted as editor content.",
+    "Auto-created titles summarize the subject and type, preserve supplied proper names, distinguish language learning from a language-learning app, and invent no details. Existing project names stay unchanged. Check multilingual prompts and rich briefs. Title inference remains a candidate until live review passes.",
+    "Every supported kind has an accurate authored welcome and useful destination.",
+    "Rich briefs preserve names, constraints, themes, facts and open questions without fabricating research.",
+    "Follow-up character edits target the existing identity; new chapters and world details appear in the appropriate editors.",
+    "Check the fifteenth turn and a second project chat, including corrections and ambiguous pronouns.",
+    "Smarter/Super never downgrade; Basic's promotions are justified by the task.",
+    "Conflict proposals are reviewable and do not overwrite manual edits."
+  ]
+}

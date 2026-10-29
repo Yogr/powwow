@@ -1,0 +1,8 @@
+{
+  "input": {
+    "capability": "chat",
+    "prompt": "Write three concise names for a pottery studio.",
+    "messages": [{"role": "system", "content": "Be specific, useful, and concise."}, {"role": "user", "content": "Write three concise names for a pottery studio."}],
+    "settings": {"max_tokens": 128}
+  }
+}

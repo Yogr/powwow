@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-26",
+  "status": "draft_not_billing_configuration",
+  "currency": "USD",
+  "billing_period": "month",
+  "notes": [
+    "Research and product proposal only. This file does not grant entitlements or configure backend enforcement.",
+    "Paid plans require payment integration, measured unit economics and product-owner approval before activation.",
+    "No recurring paid AI or sandbox allowance is included. Existing development budgets are not customer credit balances.",
+    "Storage is pooled within each organization and includes retained assets and outstanding reservations.",
+    "API credentials remain server-side. Organization-managed provider subscriptions are not assumed resellable or shareable."
+  ],
+  "plans": [
+    {
+      "id": "free",
+      "price_usd": 0,
+      "price_unit": "organization",
+      "max_members": 5,
+      "max_projects": 3,
+      "max_agents": 3,
+      "max_tasks_per_project": 500,
+      "storage_bytes": 524288000,
+      "included_paid_ai_usd": 0,
+      "included_sandbox_seconds": 0
+    },
+    {
+      "id": "starter",
+      "status": "proposed_unlaunched",
+      "price_usd": 12,
+      "price_unit": "organization",
+      "max_members": 10,
+      "storage_bytes": 10737418240,
+      "included_paid_ai_usd": 0,
+      "included_sandbox_seconds": 0,
+      "unresolved_limits": ["projects", "agents", "tasks", "metadata", "downloads", "concurrency"]
+    },
+    {
+      "id": "team",
+      "status": "proposed_unlaunched",
+      "price_usd": 12,
+      "price_unit": "member",
+      "minimum_billable_members": 5,
+      "pooled_storage_bytes_per_paid_member": 10737418240,
+      "included_paid_ai_usd": 0,
+      "included_sandbox_seconds": 0,
+      "unresolved_limits": ["projects", "agents", "tasks", "metadata", "downloads", "concurrency"]
+    },
+    {
+      "id": "enterprise",
+      "status": "proposed_unlaunched",
+      "price_unit": "negotiated_contract",
+      "requires_contract_limits": true
+    }
+  ],
+  "economics": {
+    "status": "illustrative_assumptions_not_measured",
+    "target_contribution_margin": 0.30,
+    "example_percentage_payment_fee": 0.03,
+    "example_fixed_payment_fee_usd": 0.30,
+    "minimum_revenue_formula": "(all_variable_and_allocated_costs + fixed_payment_fees) / (1 - percentage_payment_fees - target_contribution_margin)",
+    "cost_categories": ["model", "provider_tools", "sandbox", "storage", "egress", "operations", "support", "hosting", "refunds", "chargebacks", "mobile_store_fees", "tax_handling"],
+    "required_release_gates": ["settled_payment_entitlements", "atomic_credit_reservations", "organization_and_provider_hard_caps", "invoice_reconciliation", "versioned_rate_card", "abuse_limits", "billing_webhook_idempotency", "measured_customer_cohorts"]
+  }
+}
